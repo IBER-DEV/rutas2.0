@@ -3,6 +3,7 @@ from django.urls import path, include
 from rest_framework import routers
 from routes.views import ConductorViewSet, BusViewSet, RutaViewSet, ParadaViewSet, ViajeViewSet
 from tracking.views import BusLocationViewSet
+from users.views import UserViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
@@ -12,6 +13,7 @@ router.register(r'rutas', RutaViewSet)
 router.register(r'paradas', ParadaViewSet)
 router.register(r'viajes', ViajeViewSet)
 router.register(r'locations', BusLocationViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
